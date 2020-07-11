@@ -9,6 +9,8 @@ public class Food {
     public final String id;
     public final String name;
     public final LocalDate date;
+    public final int quantityFridge;
+    public final int quantityFreezer;
 
     // Properties
     public int getDays() {

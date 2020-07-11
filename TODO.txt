@@ -2,17 +2,18 @@ TODO
 ----
 
 - List
-    - Sort by Date
+    - Sort by Expiration Days, Color Coding
     - swipe to delete or add to Shopping List
-
     - add new Food
-        - Name
-        - Expiration Date
-        - Quantity (Fridge & Freezer)
+    - edit Food
 
     - Update (Import / Export to .json on AWS S3)
 
 IDEAS
 -----
 - Tabs for Fridge / Freezer / All
+
+OTHER TASKS
+-----------
+- Beta in Play Store
 
