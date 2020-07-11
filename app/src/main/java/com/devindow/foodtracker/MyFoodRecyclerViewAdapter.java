@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
+ * {@link RecyclerView.Adapter} that can display a {@link Food}.
  * TODO: Replace the implementation with code for your data type.
  */
 public class MyFoodRecyclerViewAdapter extends RecyclerView.Adapter<MyFoodRecyclerViewAdapter.ViewHolder> {
@@ -31,7 +31,7 @@ public class MyFoodRecyclerViewAdapter extends RecyclerView.Adapter<MyFoodRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).date.toString());
+        holder.mIdView.setText(mValues.get(position).getDaysString());
         holder.mContentView.setText(mValues.get(position).name);
     }
 

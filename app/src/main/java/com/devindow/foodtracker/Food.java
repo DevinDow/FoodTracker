@@ -1,6 +1,7 @@
 package com.devindow.foodtracker;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Food {
 
@@ -10,7 +11,14 @@ public class Food {
     public final LocalDate date;
 
     // Properties
-    public int getDays() { return }
+    public int getDays() {
+        Period period = Period.between(LocalDate.now(), date);
+        return period.getDays();
+    }
+
+    public String getDaysString() {
+        return String.format("%d days", getDays());
+    }
 
     // Constructor
     public Food(String id, String name, LocalDate date) {
