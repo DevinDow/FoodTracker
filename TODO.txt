@@ -15,5 +15,6 @@ IDEAS
 
 OTHER TASKS
 -----------
+- minimum Android version
+    - using LocalDate
 - Beta in Play Store
-

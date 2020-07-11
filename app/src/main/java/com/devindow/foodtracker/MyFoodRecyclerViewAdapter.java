@@ -31,8 +31,10 @@ public class MyFoodRecyclerViewAdapter extends RecyclerView.Adapter<MyFoodRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getDaysString());
+        holder.mDaysView.setText(mValues.get(position).getDaysString());
         holder.mContentView.setText(mValues.get(position).name);
+        holder.mFridgeView.setText(String.format("%d", mValues.get(position).quantityFridge));
+        holder.mFreezerView.setText(String.format("%d", mValues.get(position).quantityFreezer));
     }
 
     @Override
@@ -42,15 +44,19 @@ public class MyFoodRecyclerViewAdapter extends RecyclerView.Adapter<MyFoodRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
+        public final TextView mDaysView;
         public final TextView mContentView;
+        public final TextView mFridgeView;
+        public final TextView mFreezerView;
         public Food mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
+            mDaysView = (TextView) view.findViewById(R.id.days);
             mContentView = (TextView) view.findViewById(R.id.content);
+            mFridgeView = (TextView) view.findViewById(R.id.fridge);
+            mFreezerView = (TextView) view.findViewById(R.id.freezer);
         }
 
         @Override

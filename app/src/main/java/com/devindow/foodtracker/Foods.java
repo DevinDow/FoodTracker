@@ -14,7 +14,7 @@ public class Foods {
 
     static {
         // Add some sample items.
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 25; i++) {
             addItem(createDummyItem(i));
         }
     }
@@ -25,6 +25,6 @@ public class Foods {
     }
 
     private static Food createDummyItem(int position) {
-        return new Food(String.valueOf(position), "Food " + position, LocalDate.now().plusDays(position), 1, 0);
+        return new Food(String.valueOf(position), "Food " + position, LocalDate.now().plusDays(position-2), 1, 0);
     }
 }
