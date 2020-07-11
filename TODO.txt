@@ -1,0 +1,18 @@
+TODO
+----
+
+- List
+    - Sort by Date
+    - swipe to delete or add to Shopping List
+
+    - add new Food
+        - Name
+        - Expiration Date
+        - Quantity (Fridge & Freezer)
+
+    - Update (Import / Export to .json on AWS S3)
+
+IDEAS
+-----
+- Tabs for Fridge / Freezer / All
+
