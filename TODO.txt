@@ -2,12 +2,13 @@ TODO
 ----
 
 - List
-    - Sort by Expiration Days, Color Coding
-    - swipe to delete or add to Shopping List
+    - Update (Import / Export to .json on AWS S3)
     - add new Food
     - edit Food
-
-    - Update (Import / Export to .json on AWS S3)
+    - Sort by Expiration Days
+    - Color Coding
+    - swipe to delete
+    - swipe to add to Shopping List
 
 IDEAS
 -----
