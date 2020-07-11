@@ -17,12 +17,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.time.LocalDate;
-
 /**
  * A fragment representing a list of Items.
  */
-public class FoodFragment extends Fragment {
+public class FoodsFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -33,13 +31,13 @@ public class FoodFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public FoodFragment() {
+    public FoodsFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static FoodFragment newInstance(int columnCount) {
-        FoodFragment fragment = new FoodFragment();
+    public static FoodsFragment newInstance(int columnCount) {
+        FoodsFragment fragment = new FoodsFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
