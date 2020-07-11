@@ -1,6 +1,7 @@
 package com.devindow.foodtracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
 public class FoodActivity extends AppCompatActivity {

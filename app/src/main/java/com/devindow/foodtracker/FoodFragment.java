@@ -1,6 +1,7 @@
 package com.devindow.foodtracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.time.LocalDate;
 
 /**
  * A fragment representing a list of Items.
@@ -71,8 +74,10 @@ public class FoodFragment extends Fragment {
                     new RecyclerItemClickListener(context, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {
-                            // do whatever
-                            int i=0;
+                            // edit Food
+                            Intent intent = new Intent(view.getContext(), FoodActivity.class);
+                            //intent.putExtra("food", new Food("0", "test", LocalDate.now().toString(), 1, 0));
+                            startActivity(intent);
                         }
 
                         @Override
