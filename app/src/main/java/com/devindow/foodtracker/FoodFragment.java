@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,7 +69,11 @@ public class FoodFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyFoodRecyclerViewAdapter(Foods.ITEMS));
+            MyFoodRecyclerViewAdapter adapter = new MyFoodRecyclerViewAdapter(Foods.ITEMS);
+            recyclerView.setAdapter(adapter);
+
+            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteCallback(adapter));
+            itemTouchHelper.attachToRecyclerView(recyclerView);
 
             recyclerView.addOnItemTouchListener(
                     new RecyclerItemClickListener(context, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
@@ -92,6 +97,8 @@ public class FoodFragment extends Fragment {
     }
 }
 
+
+// RecyclerItemClickListener
 class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
     private OnItemClickListener mListener;
 
@@ -130,8 +137,34 @@ class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
         return false;
     }
 
-    @Override public void onTouchEvent(RecyclerView view, MotionEvent motionEvent) { }
+    @Override public void onTouchEvent(RecyclerView view, MotionEvent motionEvent) {
+        int i=0;
+    }
 
     @Override
     public void onRequestDisallowInterceptTouchEvent (boolean disallowIntercept){}
+}
+
+
+// SwipeToDeleteCallback
+// https://medium.com/@zackcosborn/step-by-step-recyclerview-swipe-to-delete-and-undo-7bbae1fce27e
+class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback {
+    private MyFoodRecyclerViewAdapter mAdapter;
+
+    public SwipeToDeleteCallback(MyFoodRecyclerViewAdapter adapter) {
+        super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
+        mAdapter = adapter;
+    }
+
+    @Override
+    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+        return false;
+    }
+
+    @Override
+    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+        int position = viewHolder.getAdapterPosition();
+        int i=0;
+        //mAdapter.deleteItem(position);
+    }
 }
