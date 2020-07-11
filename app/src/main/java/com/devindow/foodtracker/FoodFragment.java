@@ -12,8 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.devindow.foodtracker.dummy.DummyContent;
-
 /**
  * A fragment representing a list of Items.
  */
@@ -64,7 +62,7 @@ public class FoodFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyFoodRecyclerViewAdapter(DummyContent.ITEMS));
+            recyclerView.setAdapter(new MyFoodRecyclerViewAdapter(Foods.ITEMS));
         }
         return view;
     }

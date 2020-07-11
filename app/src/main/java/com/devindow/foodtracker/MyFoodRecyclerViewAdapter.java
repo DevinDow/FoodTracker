@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.devindow.foodtracker.dummy.DummyContent.DummyItem;
-
 import java.util.List;
 
 /**
@@ -17,9 +15,9 @@ import java.util.List;
  */
 public class MyFoodRecyclerViewAdapter extends RecyclerView.Adapter<MyFoodRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<Food> mValues;
 
-    public MyFoodRecyclerViewAdapter(List<DummyItem> items) {
+    public MyFoodRecyclerViewAdapter(List<Food> items) {
         mValues = items;
     }
 
@@ -33,8 +31,8 @@ public class MyFoodRecyclerViewAdapter extends RecyclerView.Adapter<MyFoodRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mIdView.setText(mValues.get(position).date.toString());
+        holder.mContentView.setText(mValues.get(position).name);
     }
 
     @Override
@@ -46,7 +44,7 @@ public class MyFoodRecyclerViewAdapter extends RecyclerView.Adapter<MyFoodRecycl
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public DummyItem mItem;
+        public Food mItem;
 
         public ViewHolder(View view) {
             super(view);
