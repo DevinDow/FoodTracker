@@ -25,6 +25,6 @@ public class Foods {
     }
 
     private static Food createDummyItem(int position) {
-        return new Food(String.valueOf(position), "Food " + position, LocalDate.now().plusDays(position));
+        return new Food(String.valueOf(position), "Food " + position, LocalDate.now().plusDays(position), 1, 0);
     }
 }

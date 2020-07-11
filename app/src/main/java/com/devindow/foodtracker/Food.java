@@ -23,10 +23,12 @@ public class Food {
     }
 
     // Constructor
-    public Food(String id, String name, LocalDate date) {
+    public Food(String id, String name, LocalDate date, int quantityFridge, int quantityFreezer) {
         this.id = id;
         this.name = name;
         this.date = date;
+        this.quantityFridge = quantityFridge;
+        this.quantityFreezer = quantityFreezer;
     }
 
     @Override
