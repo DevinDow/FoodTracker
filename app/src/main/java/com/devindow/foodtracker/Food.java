@@ -1,16 +1,19 @@
 package com.devindow.foodtracker;
 
+import android.text.Editable;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Food {
+public class Food implements Serializable {
 
     // Fields
     public final String id;
-    public final String name;
-    public final String date;
-    public final int quantityFridge;
-    public final int quantityFreezer;
+    public String name;
+    public String date;
+    public int quantityFridge;
+    public int quantityFreezer;
 
     // Properties
     public int getDays() {

@@ -9,6 +9,8 @@ import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.time.LocalDate;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
             // new Food
             Intent intent = new Intent(view.getContext(), FoodActivity.class);
-            //intent.putExtra("food", new Food("0", "test", LocalDate.now().toString(), 1, 0));
+            Food food = new Food("0", "test", LocalDate.now().toString(), 1, 0);
+            intent.putExtra("food", food);
             startActivity(intent);
             }
         });

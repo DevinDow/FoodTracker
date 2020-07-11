@@ -17,6 +17,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.time.LocalDate;
+
 /**
  * A fragment representing a list of Items.
  */
@@ -78,8 +80,9 @@ public class FoodsFragment extends Fragment {
                         @Override
                         public void onItemClick(View view, int position) {
                             // edit Food
+                            Food food = Foods.ITEMS.get(position);
                             Intent intent = new Intent(view.getContext(), FoodActivity.class);
-                            //intent.putExtra("food", new Food("0", "test", LocalDate.now().toString(), 1, 0));
+                            intent.putExtra("food", food);
                             startActivity(intent);
                         }
 
