@@ -27,17 +27,7 @@ public class Foods {
         }
 
 
-        //Gson gson = new Gson();
-
-        Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new JsonDeserializer<LocalDate>() {
-            @Override
-            public LocalDate deserialize(JsonElement json, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-                return LocalDate.parse(json.getAsJsonPrimitive().getAsString());
-            }
-        }).create();
-
-        LocalDate date = LocalDate.now();
-        String datejson = gson.toJson(date, LocalDate.class);
+        Gson gson = new Gson();
 
         String json = gson.toJson(Foods.ITEMS);
 
@@ -56,6 +46,6 @@ public class Foods {
     }
 
     private static Food createDummyItem(int position) {
-        return new Food(String.valueOf(position), "Food " + position, LocalDate.now().plusDays(position-2), 1, 0);
+        return new Food(String.valueOf(position), "Food " + position, LocalDate.now().plusDays(position-2).toString(), 1, 0);
     }
 }

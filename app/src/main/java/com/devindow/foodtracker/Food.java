@@ -8,13 +8,13 @@ public class Food {
     // Fields
     public final String id;
     public final String name;
-    public final LocalDate date;
+    public final String date;
     public final int quantityFridge;
     public final int quantityFreezer;
 
     // Properties
     public int getDays() {
-        Period period = Period.between(LocalDate.now(), date);
+        Period period = Period.between(LocalDate.now(), LocalDate.parse(date));
         return period.getDays();
     }
 
@@ -23,7 +23,7 @@ public class Food {
     }
 
     // Constructor
-    public Food(String id, String name, LocalDate date, int quantityFridge, int quantityFreezer) {
+    public Food(String id, String name, String date, int quantityFridge, int quantityFreezer) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -33,6 +33,6 @@ public class Food {
 
     @Override
     public String toString() {
-        return name + " " + date.toString() + " " + id;
+        return name + " " + date + " " + id;
     }
 }
