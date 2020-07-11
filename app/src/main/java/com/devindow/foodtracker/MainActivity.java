@@ -2,6 +2,7 @@ package com.devindow.foodtracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,8 +21,10 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            // new Food
+            Intent intent = new Intent(view.getContext(), FoodActivity.class);
+            //intent.putExtra("food", new Food("0", "test", LocalDate.now().toString(), 1, 0));
+            startActivity(intent);
             }
         });
     }
