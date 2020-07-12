@@ -1,6 +1,7 @@
 package com.devindow.foodtracker;
 
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SortedList;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +16,9 @@ import java.util.List;
  */
 public class MyFoodRecyclerViewAdapter extends RecyclerView.Adapter<MyFoodRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Food> mValues;
+    private final SortedList<Food> mValues;
 
-    public MyFoodRecyclerViewAdapter(List<Food> items) {
+    public MyFoodRecyclerViewAdapter(SortedList<Food> items) {
         mValues = items;
     }
 

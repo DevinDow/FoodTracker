@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            // new Food
-            Intent intent = new Intent(view.getContext(), FoodActivity.class);
-            Food food = new Food("0", "test", LocalDate.now().toString(), 1, 0);
-            intent.putExtra("foodID", food.id);
-            startActivity(intent);
+                // new Food
+                Intent intent = new Intent(view.getContext(), FoodActivity.class);
+                Food food = new Food("0", "test", LocalDate.now().toString(), 1, 0);
+                intent.putExtra("foodID", food.id);
+                startActivity(intent);
             }
         });
     }
