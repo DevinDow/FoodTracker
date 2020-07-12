@@ -6,7 +6,7 @@ TODO
     - add new Food
     - edit Food
     - Sort by Expiration Days
-        - will Recycler & Poistion have a problem with this?
+        - will Recycler & Position have a problem with this?
     - Color Coding
     - swipe to delete
     - swipe to add to Shopping List

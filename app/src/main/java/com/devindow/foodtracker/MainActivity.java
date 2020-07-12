@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             // new Food
             Intent intent = new Intent(view.getContext(), FoodActivity.class);
             Food food = new Food("0", "test", LocalDate.now().toString(), 1, 0);
-            intent.putExtra("food", food);
+            intent.putExtra("foodID", food.id);
             startActivity(intent);
             }
         });

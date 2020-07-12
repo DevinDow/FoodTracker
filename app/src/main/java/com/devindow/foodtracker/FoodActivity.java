@@ -25,7 +25,8 @@ public class FoodActivity extends AppCompatActivity {
 
         // get Food passed in by Intent
         Intent intent = getIntent();
-        food = (Food)intent.getSerializableExtra("food");
+        String foodID = (String)intent.getSerializableExtra("foodID");
+        food = Foods.ITEM_MAP.get(foodID);
 
         // Save
         Button buttonSave = findViewById(R.id.buttonSave);

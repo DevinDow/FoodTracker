@@ -69,7 +69,7 @@ public class FoodsFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            MyFoodRecyclerViewAdapter adapter = new MyFoodRecyclerViewAdapter(Foods.ITEMS);
+            final MyFoodRecyclerViewAdapter adapter = new MyFoodRecyclerViewAdapter(Foods.ITEMS);
             recyclerView.setAdapter(adapter);
 
             ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteCallback(adapter));
@@ -82,8 +82,9 @@ public class FoodsFragment extends Fragment {
                             // edit Food
                             Food food = Foods.ITEMS.get(position);
                             Intent intent = new Intent(view.getContext(), FoodActivity.class);
-                            intent.putExtra("food", food);
+                            intent.putExtra("foodID", food.id);
                             startActivity(intent);
+                            adapter.notifyItemChanged(position);
                         }
 
                         @Override
